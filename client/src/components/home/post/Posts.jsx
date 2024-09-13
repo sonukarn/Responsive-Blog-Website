@@ -25,7 +25,7 @@ const Posts = () => {
       {posts && posts.length > 0 ? (
         posts.map((post) => {
           return (
-            <Grid item lg={3} sm={4} xs={12}>
+            <Grid key={post._id} item lg={3} sm={4} xs={12}>
               <Details to={`details/${post._id}`}>
                 <Post post={post} />
               </Details>

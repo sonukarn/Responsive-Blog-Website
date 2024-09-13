@@ -5,6 +5,7 @@ import { API } from "../../service/api";
 import { MdRebaseEdit } from "react-icons/md";
 import { MdDeleteSweep } from "react-icons/md";
 import { DataContext } from "../../context/DataProvider";
+import Comments from "./comments/Comments";
 
 const Container = styled(Box)(({ theme }) => ({
   margin: "50px 100px",
@@ -130,6 +131,7 @@ const DetailsBlog = () => {
         </Typography>
       </Author>
       <Description variant="body1">{post.description}</Description>
+      <Comments post={post} />
     </Container>
   );
 };

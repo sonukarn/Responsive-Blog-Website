@@ -1,22 +1,30 @@
 export const categories = [
   {
     id: 1,
-    type: "Music",
+    type: "Frontend-Development",
   },
   {
     id: 2,
-    type: "Coding",
+    type: "Backend-Development",
   },
   {
     id: 3,
-    type: "Artificial Inteligence",
+    type: "FullStack-Development",
   },
   {
     id: 4,
-    type: "FrontEnd Developer",
+    type: "Web-Design",
   },
   {
     id: 5,
-    type: "Backend Developer Guide",
+    type: "DevOps",
+  },
+  {
+    id: 6,
+    type: "Music",
+  },
+  {
+    id: 7,
+    type: "News",
   },
 ];

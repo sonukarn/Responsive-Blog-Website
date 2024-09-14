@@ -15,6 +15,7 @@ import {
   getComments,
   deleteComment,
 } from "../controller/comment-controller.js";
+import { sendEmail } from "../controller/mail-controller.js";
 const router = express.Router();
 
 router.post("/signup", SignupUser);
@@ -29,4 +30,5 @@ router.delete("/delete/:id", authenticateToken, deletePost);
 router.post("/comment/new", authenticateToken, newComment);
 router.get("/comments/:id", authenticateToken, getComments);
 router.delete("/comment/delete/:id", authenticateToken, deleteComment);
+router.post("/sendmail", authenticateToken, sendEmail);
 export default router;

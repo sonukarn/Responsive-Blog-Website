@@ -10,7 +10,7 @@ conn.once("open", () => {
   gfs = grid(conn.db, mongoose.mongo);
   gfs.collection("fs");
 });
-const url = "http://localhost:8000";
+const url = "";
 export const uploadImage = (req, res) => {
   if (!req.file) {
     return res.status(404).send("No file found.");

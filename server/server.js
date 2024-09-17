@@ -6,7 +6,22 @@ import cors from "cors";
 const app = express();
 dotenv.config();
 const PORT = process.env.PORT || 8000;
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://sonuwebtechblog.onrender.com",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+    allowedHeaders: [
+      "Origin",
+      "X-Requested-With",
+      "Content-Type",
+      "Authorization",
+    ],
+    exposedHeaders: ["Authorization"],
+    maxAge: 86400, // 24 hours
+  })
+);
+app.options("*", cors());
 app.use(express.json());
 app.use("/", Router);
 app.listen(PORT, () => {

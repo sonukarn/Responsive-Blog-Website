@@ -7,126 +7,98 @@ import {
   Avatar,
   useTheme,
   styled,
+  Button,
+  IconButton,
 } from "@mui/material";
-// Custom styling for the background image
-const CustomAvtar = styled(Avatar)(({ theme }) => ({
-  width: theme.spacing(15),
-  height: theme.spacing(15),
-  margin: theme.spacing(2, "auto"),
-}));
-const BackgroundImage = styled(Box)(({ theme }) => ({
-  backgroundImage: `url('https://source.unsplash.com/random')`,
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  padding: theme.spacing(8, 0),
-  // color: "#fff",
-  textAlign: "center",
-  display: "flex",
-  alignItems: "center",
-  minHeight: "400px",
-  width: "100%",
-}));
+import aboutImg from "../../assets/about.jpg";
+import { FaFacebook } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+
 const About = () => {
-  const theme = useTheme();
   return (
-    <BackgroundImage>
-      <Container maxWidth="lg">
-        <Typography
-          variant="h2"
-          component="h1"
-          gutterBottom
-          sx={{ fontWeight: "bold" }}
-        >
-          About Us
-        </Typography>
-        <Typography variant="body1" gutterBottom sx={{ mb: 4 }}>
-          We are passionate about delivering the best solutions for your
-          business. Our team is dedicated to crafting high-quality digital
-          experiences that leave a lasting impression.
-        </Typography>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <CustomAvtar src="https://via.placeholder.com/150" alt="Avatar" />
-              <Typography variant="h5" sx={{ mt: 2 }}>
-                Sonu Kumar
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                color="textSecondary"
-                gutterBottom
-              >
-                Frontend Developer
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 1 }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                posuere, mauris nec ultricies commodo, mauris ipsum fermentum
-                ex, vitae bibendum neque velit vitae velit.
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <CustomAvtar src="https://via.placeholder.com/150" alt="Avatar" />
-              <Typography variant="h5" sx={{ mt: 2 }}>
-                Rahul Shah
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                color="textSecondary"
-                gutterBottom
-              >
-                Frontend Developer
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 1 }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                posuere, mauris nec ultricies commodo, mauris ipsum fermentum
-                ex, vitae bibendum neque velit vitae velit.
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <CustomAvtar src="https://via.placeholder.com/150" alt="Avatar" />
-              <Typography variant="h5" sx={{ mt: 2 }}>
-                Rahul Shah
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                color="textSecondary"
-                gutterBottom
-              >
-                Frontend Developer
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 1 }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                posuere, mauris nec ultricies commodo, mauris ipsum fermentum
-                ex, vitae bibendum neque velit vitae velit.
-              </Typography>
-            </Box>
-          </Grid>
+    <Box sx={{ flexGrow: 1, padding: "20px", minHeight: "100vh" }}>
+      <Grid container spacing={2} alignItems="center" justifyContent={"center"}>
+        {/* Image section */}
+        <Grid item xs={12} md={6}>
+          <Box
+            component={"img"}
+            src={aboutImg}
+            alt="About Us"
+            sx={{
+              width: "100%",
+              height: "400px",
+              borderRadius: "8px",
+              objectFit: "cover",
+              color: "gray",
+            }}
+          />
         </Grid>
-      </Container>
-    </BackgroundImage>
+        {/* Text section */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            flexDirection: "column",
+          }}
+        >
+          <Typography
+            variant="h2"
+            component="h1"
+            gutterBottom
+            style={{ textAlign: "center", fontWeight: "bold" }}
+          >
+            About Us
+          </Typography>
+          <Typography variant="body1" paragraph gutterBottom>
+            We are passionate about delivering the best solutions for your
+            business. Our team is dedicated to crafting high-quality digital
+            experiences that leave a lasting impression.
+          </Typography>
+          {/* Contact button */}
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            sx={{
+              marginTop: "20px",
+              marginBottom: "20px",
+            }}
+          >
+            Contact Us
+          </Button>
+          {/* Social Media links */}
+          <Box sx={{ display: "flex", gap: 2 }}>
+            <IconButton
+              href="https://facebook.com"
+              target="_blank"
+              color="primary"
+            >
+              <FaFacebook />
+            </IconButton>
+            <IconButton
+              href="https://instagram.com"
+              target="_blank"
+              color="primary"
+            >
+              <FaSquareInstagram />
+            </IconButton>
+            <IconButton
+              href="https://linkedin.com"
+              target="_blank"
+              color="primary"
+            >
+              <FaLinkedin />
+            </IconButton>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 

@@ -8,7 +8,7 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 app.use(
   cors({
-    origin: "https://sonuwebtechblog.onrender.com",
+    origin: "https://slug-panel.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
     allowedHeaders: [

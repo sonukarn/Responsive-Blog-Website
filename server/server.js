@@ -8,17 +8,8 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 app.use(
   cors({
-    origin: "https://slug-panel.onrender.com",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-    allowedHeaders: [
-      "Origin",
-      "X-Requested-With",
-      "Content-Type",
-      "Authorization",
-    ],
-    exposedHeaders: ["Authorization"],
-    maxAge: 86400, // 24 hours
+    origin: "*",
+    "Access-Control-Allow-Origin": "*",
   })
 );
 app.options("*", cors());
